@@ -1,4 +1,61 @@
+* {
+    box-sizing: border-box;
+}
+
 p#start-info {
-  font-size: 3em;
-  text-align: center;
+    font-size: 2em;
+    text-align: center;
+}
+
+li {
+    font-size: 1.5em;
+    list-style-type: none;
+}
+
+input {
+    width: 20px;
+    height: 20px;
+}
+
+body {
+    background: #EEE9E3 url("/img/flower7.png") no-repeat fixed center;
+    background-size: cover;
+    margin: 0;
+    font-family: 'Satisfy', cursive;
+    font-size: 2vh;
+    width: 100%;
+    height: 100vh;
+}
+
+.main {
+    border-radius: 5px;
+    position: absolute;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    width: 95%;
+    padding: 1%;
+    background-color: rgba(185, 174, 153, 0.726);
+}
+
+.container {
+    display: inline-block;
+    margin: auto;
+    vertical-align: middle;
+    width: 49.4%;
+    height: 80vh;
+    border-radius: 5px;
+    background-color: rgba(71, 215, 148, 0.521);
+}
+
+.undone-tasks {
+    float: left;
+}
+
+.done-tasks {
+    float: right;
+}
+
+h3 {
+    text-align: center;
+    font-size: 2em;
 }
