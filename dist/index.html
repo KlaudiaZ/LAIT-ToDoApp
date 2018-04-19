@@ -16,19 +16,23 @@
     <div class="main">
         <div class="container undone-tasks">
             <h3>Unfinished tasks</h3>
-            <ul id="unfinished">
-                <li>
-                    <input type="checkbox" id="example-unfinished-id">
-                    <label for="example-unfinished-id">Example of an unfinished task <img src="img/delete.png" width="20" height="20" class="delete" id="example-unfinished-id-delete"></label>
+            <ul class="list" id="unfinished">
+                <li class="unfinished">
+                    <input type="checkbox" class="checkbox" id="example-unfinished-id">
+                    <label class="task" for="example-unfinished-id">Example of an unfinished task <img src="img/delete.png" class="delete hidden" id="example-unfinished-id-delete"></label>
                 </li>
             </ul>
+            <div class="new-task">
+                <input type="text" class="input" id="enter-new-task" placeholder="Enter new task">
+                <button class="button" id="add-new-task"><img src="img/add.png" class="add-button"></button>
+            </div>
         </div>
         <div class="container done-tasks">
             <h3>Finished tasks</h3>
-            <ul id="finished">
-                <li>
-                    <input type="checkbox" id="example-finished-id">
-                    <label>Example of a finished task <img src="img/delete.png" width="20" height="20" class="delete" id="example-finished-id-delete"></label>
+            <ul class="list" id="finished">
+                <li class="finished">
+                    <input type="checkbox" class="checkbox" id="example-finished-id">
+                    <label class="task">Example of a finished task </label><img src="img/delete.png" width="20" height="20" class="delete hidden" id="example-finished-id-delete">
                 </li>
             </ul>
         </div>
