@@ -79,17 +79,18 @@ body {
     float: right;
 }
 
-
-/* .hidden {
+.hidden {
     position: absolute !important;
     top: -9999px !important;
     left: -9999px !important;
-} */
+}
 
 .delete {
     vertical-align: middle;
     width: 1em;
     height: 1em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
 }
 
 .finished {
@@ -113,6 +114,10 @@ body {
     width: 70%;
     height: 1.5em;
     vertical-align: middle;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: rgba(238, 233, 227, 0.7);
 }
 
 

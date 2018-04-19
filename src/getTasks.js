@@ -13,3 +13,7 @@ export const getTasksFromServer = () => {
             console.log(response);
         });
 }
+
+const createDOMElements = (tasks) => {
+
+}
