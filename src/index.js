@@ -1,8 +1,8 @@
 import './css/index.css';
 import './css/other.css';
 import $ from 'jquery';
-import { getTasksFromServer } from './getTasks';
 import { showDeleteButton } from './misc';
+import { getTasksFromServer } from './tasks';
 console.log('JavaScript was attached to the page!');
 
 $(() => {
