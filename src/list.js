@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { sendTaskToServer } from './tasks';
 
 export const createUnfinishedTask = (task) => {
     $('#unfinished').append($('<li class="unfinished">')
@@ -16,4 +17,10 @@ export const createFinishedTask = (task) => {
     ${task.task}
     <img src="img/delete.png" class="delete hidden" id="${task.id}-delete">
     </label>`));
+}
+
+export const bindAddTaskButton = () => {
+    $('#add-new-task').bind('click', (e) => {
+        sendTaskToServer($('#enter-new-task').val());
+    });
 }
