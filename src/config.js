@@ -6,6 +6,7 @@ export default {
         addTask: server + "todo",
         deleteTask: server + "todo/",
         taskDone: server + "todo/done/",
-        taskUndone: server + "todo/undone/"
+        taskUndone: server + "todo/undone/",
+        editTask: server + "todo/"
     }
 }

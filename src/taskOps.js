@@ -2,8 +2,8 @@ import $ from 'jquery';
 import axios from 'axios';
 import config from './config';
 import { Server } from 'http';
-import { createUnfinishedTask, createFinishedTask } from './list';
-import { showDeleteButton, bindDeleteButton, bindCheckboxes } from './binds';
+import { createUnfinishedTask, createFinishedTask, turnTaskIntoTextarea } from './list';
+import { showDeleteButton, bindDeleteButton, bindCheckboxes, preventBoxChangeOnLabelClick, bindDoubleClickOnTask, bindEnterOnTextArea } from './binds';
 
 export const getTasksFromServer = () => {
     return $.get(config.url.getTask)
@@ -12,6 +12,8 @@ export const getTasksFromServer = () => {
             showDeleteButton();
             bindDeleteButton();
             bindCheckboxes();
+            preventBoxChangeOnLabelClick();
+            bindDoubleClickOnTask();
         })
         .catch(() => {
             alert("Error: list loading failed!")
@@ -27,26 +29,26 @@ const sortTasks = (tasks) => {
 }
 
 export const sendTaskToServer = (task) => {
-    $.post(config.url.addTask, {
-            task: task
-        }, () => {}, "json")
-        .then(() => {
-            location.reload(true);
-        })
-        .catch(() => {
-            alert("Error: your task couldn't be sent!")
-        });
+    // $.post(config.url.addTask, {
+    //         task: task
+    //     }, () => {}, "json")
+    //     .then(() => {
+    //         location.reload(true);
+    //     })
+    //     .catch(() => {
+    //         alert("Error: your task couldn't be sent!")
+    //     });
 
-    //     axios.post(config.url.addTask, {
-    //             task: task
-    //         })
-    //         .then((response) => {
-    //             console.log('I am working!');
-    //         })
-    //         .catch((error) => {
-    //             console.log('I am not working...');
-    //         });
-    //     location = location; 
+    axios.post(config.url.addTask, {
+            task: task
+        })
+        .then((response) => {
+            console.log('I am working!');
+        })
+        .catch((error) => {
+            console.log('I am not working...');
+        });
+    location = location;
 }
 
 export const deleteTask = (id) => {
@@ -72,5 +74,21 @@ const moveTask = (address) => {
         })
         .catch(() => {
             alert("There was a problem with moving the task!");
+        });
+}
+
+export const editTask = (id, task) => {
+    turnTaskIntoTextarea(task);
+    bindEnterOnTextArea(id);
+}
+
+export const updateTask = (id, newTaskValue) => {
+    console.log(newTaskValue);
+    axios.put(config.url.editTask + id, { task: newTaskValue })
+        .then(() => {
+            location.reload(true);
+        })
+        .catch(() => {
+            alert("There was a problem with editing the task!");
         });
 }

@@ -34,6 +34,11 @@ body {
     height: 100vh;
 }
 
+textarea {
+    vertical-align: middle;
+    resize: none;
+}
+
 
 /*----------++++++++++---------- CLASSES ----------++++++++++----------*/
 
