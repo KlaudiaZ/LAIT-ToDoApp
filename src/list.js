@@ -21,6 +21,6 @@ export const turnTaskIntoTextarea = (task) => {
     const oldTask = $(task).text().trim();
     $(task).html(`<textarea id="taskMod">${oldTask}</textarea>`);
     $('textarea').focus().mouseleave((e) => {
-        $(task).html(oldTask);
+        $(task).html(" " + oldTask);
     });
 }
