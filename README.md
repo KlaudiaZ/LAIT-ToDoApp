@@ -1,2 +1,2 @@
-# vanilla-init-project
-Clean, minimal configuration to start vanilla js project based on webpack and babel
+# ToDoApp
+A simple interactive to-do list with its own server-based storage.
